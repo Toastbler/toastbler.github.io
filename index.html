@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>craftoast.exe</title>
+    <title>Toastbler.exe</title>
     <style>
         /* Base Reset & Core Styles */
         ::after, ::before { text-decoration: inherit; vertical-align: inherit; }
@@ -40,7 +40,7 @@
             border-top: 2px solid #4e4e4e;
             border-left: 1px solid #4e4e4e;
             border-right: 1px solid #4e4e4e;
-            border-radius: 70px 80px 0 0;
+            border-radius: 20px 20px 0 0;
             padding: 12px 30px;
             backdrop-filter: blur(12px) saturate(150%);
             display: flex;
@@ -195,8 +195,7 @@
     <div id="websiteContainer">
         <header id="mainHeader">
             <div class="header-logo-text">
-                <span id="logo-icon">🍞</span>
-                <span class="header-title">craftoast.exe</span>
+                <span class="header-title">Toastbler.exe</span>
                 <a id="old-page-link" href="https://roltler.roltler.workers.dev" target="_blank">Old Page</a>
             </div>
             <div style="display: flex; align-items: center; gap: 15px;">
@@ -208,6 +207,7 @@
             <nav id="navigationMenu">
                 <div id="btn-home" class="nav-inactive" onclick="openTab('home')">Home</div>
                 <div id="btn-projects" class="nav-inactive" onclick="openTab('projects')">Projects</div>
+                <div id="btn-about" class="nav-inactive" onclick="openTab('about')">About Me</div>
                 <div id="btn-changelog" class="nav-inactive" onclick="openTab('changelog')">Changelog</div>
                 <div id="btn-socials" class="nav-inactive" onclick="openTab('socials')">Socials</div>
             </nav>
@@ -222,6 +222,11 @@
                     <h1>Archive</h1>
                     <button class="project-link" onclick="launch('https://discord.gg/kY54P3Rw3Q')">Official Discord</button>
                     <button class="project-link" onclick="launch('https://frosts.atwebpages.com')">Frosty GDPS</button>
+                </div>
+
+                <div id="about" class="tab-content">
+                    <h1>About Me</h1>
+                    <p>coming soon (or never?)</p>
                 </div>
 
                 <div id="changelog" class="tab-content">
@@ -242,7 +247,7 @@
                 </div>
             </main>
         </div>
-        <footer>craftoast.exe - v1.6.2</footer>
+        <footer>Toastbler.exe - v1.6.2</footer>
     </div>
 
     <script>
