@@ -3,21 +3,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     font-family: "Segoe UI", Tahoma, sans-serif;
+    overflow: hidden;
 }
 
 #websiteContainer {
-    width: 900px;
-    max-width: 95vw;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-layout {
     display: flex;
-    height: 600px;
+    flex-grow: 1;
     gap: 2px;
-    padding: 0 !important; /* Remove padding to make sidebar and content flush */
+    padding: 0 !important;
+    overflow: hidden;
 }
 
 .sidebar {
