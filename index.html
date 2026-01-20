@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>craftoast.exe</title>
+    <style>
+        /* Base Reset & Core Styles */
+        ::after, ::before { text-decoration: inherit; vertical-align: inherit; }
+        :where(:root) { cursor: default; line-height: 1.5; overflow-wrap: break-word; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            background: #303030 url("https://wallpaperaccess.com/full/1381223.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: "Segoe UI Semilight", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #dadada;
+            scroll-behavior: smooth;
+        }
+
+        #websiteContainer {
+            width: 100%;
+            max-width: 800px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: rgba(0, 0, 0, .5) 0 14px 28px, rgba(0, 0, 0, .4) 0 10px 10px;
+            position: relative;
+            margin: 20px;
+        }
+
+        /* The Glossy Header */
+        #mainHeader {
+            background: linear-gradient(180deg, rgba(148, 148, 148, .85) 0, rgba(71, 71, 71, .85) 20%, rgba(19, 19, 19, .9) 40%, rgba(7, 7, 7, .93) 100%);
+            border-top: 2px solid #4e4e4e;
+            border-left: 1px solid #4e4e4e;
+            border-right: 1px solid #4e4e4e;
+            border-radius: 70px 80px 0 0;
+            padding: 12px 30px;
+            backdrop-filter: blur(12px) saturate(150%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .header-logo-text { display: flex; align-items: center; }
+        
+        #old-page-link {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #00a4ef;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        #old-page-link:hover {
+            opacity: 1;
+        }
+        
+        #logo-icon {
+            font-size: 32px;
+            margin-right: 15px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #logo-icon:hover {
+            filter: brightness(120%);
+        }
+
+        .header-title {
+            color: #fff;
+            font-size: 28px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            font-weight: 300;
+        }
+
+        #navAndContentContainer {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            border-left: 1px solid #4e4e4e;
+            border-right: 1px solid #4e4e4e;
+        }
+
+        /* Sidebar Glass */
+        #navigationMenu {
+            background: linear-gradient(100deg, rgba(20, 20, 20, .85) 50%, rgba(27, 27, 27, .9) 100%);
+            border-right: 1px solid #474747;
+            backdrop-filter: blur(8px);
+            width: 180px;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+        }
+
+        .nav-active, .nav-inactive {
+            border: 1px solid #0f0f0f;
+            border-radius: 5px;
+            color: #eee;
+            padding: 10px 15px;
+            font-size: 13px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, .15) 0, rgba(0, 0, 0, .3) 100%);
+        }
+
+        .nav-active {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(0, 113, 212, .3) 50%, rgba(0, 120, 212, .7) 100%) !important;
+            color: #00a4ef;
+        }
+
+        .nav-inactive:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Content Area */
+        #mainContent {
+            background: rgba(30, 30, 30, .6);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            flex: 1;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #00a4ef #1a1a1a;
+        }
+
+        h1 {
+            background: linear-gradient(to bottom, #bebebe 0, #232323 55%, #000 55%, #161616 100%);
+            border: 1px solid #4b4b4b;
+            padding: 5px 15px;
+            font-size: 16px;
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, .3) 0 3px 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            text-shadow: 0 0 3px #000;
+            margin-bottom: 15px;
+        }
+
+        .project-link, .social-link {
+            display: block;
+            color: #00a4ef;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid #444;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .project-link:hover, .social-link:hover {
+            background: rgba(0, 164, 239, 0.1);
+            border-color: #00a4ef;
+            color: #fff;
+        }
+
+        footer {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 8px 20px;
+            font-size: 11px;
+            text-align: right;
+            border: 1px solid #4e4e4e;
+            border-top: none;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        @media (max-width: 600px) {
+            #navigationMenu { width: 60px; }
+            .nav-active, .nav-inactive { font-size: 0; padding: 15px; text-align: center; }
+            #navigationMenu div::before { content: "•"; font-size: 20px; }
+            #mainHeader { padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="websiteContainer">
+        <header id="mainHeader">
+            <div class="header-logo-text">
+                <span id="logo-icon">🍞</span>
+                <span class="header-title">craftoast.exe</span>
+                <a id="old-page-link" href="https://roltler.roltler.workers.dev" target="_blank">Old Page</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="font-size: 12px; opacity: 0.7;">v1.6.2</div>
+            </div>
+        </header>
+
+        <div id="navAndContentContainer">
+            <nav id="navigationMenu">
+                <div id="btn-home" class="nav-inactive" onclick="openTab('home')">Home</div>
+                <div id="btn-projects" class="nav-inactive" onclick="openTab('projects')">Projects</div>
+                <div id="btn-changelog" class="nav-inactive" onclick="openTab('changelog')">Changelog</div>
+                <div id="btn-socials" class="nav-inactive" onclick="openTab('socials')">Socials</div>
+            </nav>
+
+            <main id="mainContent">
+                <div id="home" class="tab-content">
+                    <h1>Welcome</h1>
+                    <p>toastbler's corner of the internet.</p>
+                </div>
+
+                <div id="projects" class="tab-content">
+                    <h1>Archive</h1>
+                    <button class="project-link" onclick="launch('https://discord.gg/kY54P3Rw3Q')">Official Discord</button>
+                    <button class="project-link" onclick="launch('https://frosts.atwebpages.com')">Frosty GDPS</button>
+                </div>
+
+                <div id="changelog" class="tab-content">
+                    <h1>Update Log</h1>
+                    <div style="border-left: 2px solid #3cda56; padding-left: 15px; margin-bottom: 20px;">
+                        <p><b>2026-01-20</b>: Moved old page link to header, added smooth scrolling, styled for Longhorn aesthetics, removed animations, updated for GitHub Pages compatibility.</p>
+                        <p><b>2026-01-19</b>: Rebranded to Craftoast. Cleaned up the Aero glass effects.</p>
+                        <p><b>2025-01-16</b>: Removed music indexer. Added Newgrounds.</p>
+                        <p><b>2025-01-15</b>: Refactored root routing logic.</p>
+                    </div>
+                </div>
+
+                <div id="socials" class="tab-content">
+                    <h1>Links</h1>
+                    <button class="social-link" onclick="launch('https://github.com/eltgold')">GitHub</button>
+                    <button class="social-link" onclick="launch('https://youtube.com/@Roltler')">YouTube</button>
+                    <button class="social-link" onclick="launch('https://roltler.newgrounds.com')">Newgrounds</button>
+                </div>
+            </main>
+        </div>
+        <footer>craftoast.exe - v1.6.2</footer>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            openTab(hash, false);
+        }
+
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            openTab(hash, false);
+        });
+
+        function openTab(name, updateURL = true) {
+            if (updateURL) {
+                window.location.hash = name === 'home' ? '' : name;
+            }
+            
+            document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+            document.querySelectorAll("#navigationMenu div").forEach(b => {
+                b.classList.remove("nav-active");
+                b.classList.add("nav-inactive");
+            });
+
+            const target = document.getElementById(name);
+            if (target) {
+                target.classList.add("active");
+                const btn = document.getElementById("btn-" + name);
+                if (btn) {
+                    btn.classList.add("nav-active");
+                    btn.classList.remove("nav-inactive");
+                }
+            }
+        }
+
+        function launch(url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    </script>
+</body>
+</html>
