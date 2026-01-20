@@ -1,0 +1,76 @@
+body {
+    background: radial-gradient(circle, #5b9bd5 0%, #2e75b6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+#websiteContainer {
+    width: 900px;
+    max-width: 95vw;
+}
+
+.main-layout {
+    display: flex;
+    height: 600px;
+    gap: 2px;
+    padding: 0 !important; /* Remove padding to make sidebar and content flush */
+}
+
+.sidebar {
+    width: 250px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.sidebar .tree-view {
+    flex-grow: 1;
+    overflow-y: auto;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.content-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    background: white;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+    padding: 4px 8px;
+    cursor: default;
+}
+
+.nav-link:hover {
+    background-color: #e5f3ff;
+}
+
+li[aria-selected="true"] {
+    background-color: #3399ff;
+}
+
+li[aria-selected="true"] > .nav-link {
+    color: white;
+}
+
+.has-space {
+    padding: 20px;
+}
+
+.title-bar-text img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
