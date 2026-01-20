@@ -1,12 +1,11 @@
-body {
-    background: radial-gradient(circle, #5b9bd5 0%, #2e75b6 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+html, body {
     margin: 0;
-    font-family: "Segoe UI", Tahoma, sans-serif;
+    padding: 0;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: white;
 }
 
 #websiteContainer {
@@ -14,12 +13,25 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override 7.css window styles for true fullscreen */
+.window.glass {
+    border-radius: 0 !important;
+}
+.window.glass::before {
+    border-radius: 0 !important;
 }
 
 .main-layout {
     display: flex;
     flex-grow: 1;
-    gap: 2px;
+    gap: 0;
     padding: 0 !important;
     overflow: hidden;
 }
@@ -30,15 +42,14 @@ body {
     display: flex;
     flex-direction: column;
     user-select: none;
+    border-right: 1px solid #d9d9d9;
 }
 
 .sidebar .tree-view {
     flex-grow: 1;
     overflow-y: auto;
+    border: none;
     border-radius: 0;
-    border-top: none;
-    border-left: none;
-    border-bottom: none;
 }
 
 .content-area {
@@ -72,9 +83,78 @@ li[aria-selected="true"] > .nav-link {
     padding: 20px;
 }
 
+.title-bar-text {
+    text-shadow: none !important;
+}
+
 .title-bar-text img {
     width: 16px;
     height: 16px;
     vertical-align: middle;
     margin-right: 5px;
+}
+
+/* Control Panel Category View Styles */
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+.category-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.category-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.category-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    font-size: 1.3em;
+    color: #2d882d; /* Windows 7 green */
+    text-decoration: none;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.category-title:hover {
+    text-decoration: underline;
+}
+
+.category-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category-link {
+    font-size: 0.95em;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.category-link:hover {
+    text-decoration: underline;
+}
+
+.old-page-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    opacity: 0.8;
+}
+
+.old-page-link:hover {
+    opacity: 1;
+    text-decoration: underline;
 }

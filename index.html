@@ -13,30 +13,7 @@
         <header id="mainHeader" class="title-bar">
             <div class="title-bar-text">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlQUoQ5lQkvdz3WjAZZul6l85Yg4CMZyctgg&s" alt="">
-                Toastbler.exe - Home
-    <title>Home - Toastbler.exe</title>
-    <link rel="stylesheet" href="https://unpkg.com/7.css">
-    <style>
-        .nav-active {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .nav-inactive {
-            text-decoration: none;
-        }
-        .menu-item {
-            margin: 0 5px;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="websiteContainer" class="window">
-        <header id="mainHeader" class="title-bar">
-            <div class="title-bar-text">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlQUoQ5lQkvdz3WjAZZul6l85Yg4CMZyctgg&s" alt="Toastbler Logo" style="width: 16px; height: 16px; margin-right: 5px; vertical-align: middle;">
-                Toastbler.exe
-                <a id="old-page-link" href="https://roltler.roltler.workers.dev" target="_blank" style="color: white; margin-left: 10px; font-size: 10px;">Old Page</a>
+                Toastbler.exe <a href="https://roltler.roltler.workers.dev" target="_blank" class="old-page-link">Old Page</a>
             </div>
             <div class="title-bar-controls">
                 <button aria-label="Minimize"></button>
@@ -57,39 +34,57 @@
             </aside>
 
             <main id="mainContent" class="content-area has-scrollbar">
-                <div class="has-space">
-                    <h1>Welcome!</h1>
-                    <p>Welcome to my corner of the internet! I am Toastbler, and this is my website where I share my projects and other stuff.</p>
-                    <p>Feel free to explore the tabs on the left.</p>
+                <div class="category-grid">
+                    <!-- Personal Info -->
+                    <div class="category-item">
+                        <img src="https://img.icons8.com/color/64/user-group-man-man.png" alt="Personal" class="category-icon">
+                        <div class="category-content">
+                            <a href="personal.html" class="category-title">About Me</a>
+                            <div class="category-links">
+                                <a href="personal.html" class="category-link">Personal Details</a>
+                                <a href="personal.html" class="category-link">PC Specs</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="category-item">
+                        <img src="https://img.icons8.com/color/64/computer.png" alt="Projects" class="category-icon">
+                        <div class="category-content">
+                            <a href="projects.html" class="category-title">My Projects</a>
+                            <div class="category-links">
+                                <a href="projects.html" class="category-link">Active Projects</a>
+                                <a href="projects.html" class="category-link">Archived Work</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Socials -->
+                    <div class="category-item">
+                        <img src="https://img.icons8.com/color/64/world-wide-web.png" alt="Socials" class="category-icon">
+                        <div class="category-content">
+                            <a href="socials.html" class="category-title">Stay Connected</a>
+                            <div class="category-links">
+                                <a href="socials.html" class="category-link">Social Media</a>
+                                <a href="socials.html" class="category-link">Geometry Dash</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Info -->
+                    <div class="category-item">
+                        <img src="https://img.icons8.com/color/64/settings.png" alt="System" class="category-icon">
+                        <div class="category-content">
+                            <a href="changelog.html" class="category-title">System Info</a>
+                            <div class="category-links">
+                                <a href="changelog.html" class="category-link">Changelog</a>
+                                <a href="https://roltler.roltler.workers.dev" target="_blank" class="category-link">Old Site</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
-
-        <footer class="status-bar">
-            <p class="status-bar-field">Toastbler.exe</p>
-            <p class="status-bar-field">v1.7.0</p>
-            <p class="status-bar-field">Status: Ready</p>
-            <p class="status-bar-field"><a href="https://roltler.roltler.workers.dev" target="_blank">Old Page</a></p>
-        <div id="navAndContentContainer" class="window-body">
-            <nav id="navigationMenu" style="margin-bottom: 10px; padding: 5px; border-bottom: 1px solid #ccc;">
-                <a href="index.html" class="menu-item nav-active">Home</a> |
-                <a href="projects.html" class="menu-item nav-inactive">Projects</a> |
-                <a href="changelog.html" class="menu-item nav-inactive">Changelog</a> |
-                <a href="socials.html" class="menu-item nav-inactive">Socials</a> |
-                <a href="personal.html" class="menu-item nav-inactive">About Me</a> |
-                <a href="guestbook.html" class="menu-item nav-inactive">Guestbook</a> |
-                <a href="blog.html" class="menu-item nav-inactive">Blog</a> |
-                <a href="gallery.html" class="menu-item nav-inactive">Gallery</a>
-            </nav>
-
-            <main id="mainContent" class="window-body">
-                <h1>Welcome</h1><p>Welcome to my corner of the internet! Use the menu above to navigate.</p>
-            </main>
-        </div>
-        <footer class="status-bar">
-            <p class="status-bar-field">Toastbler.exe - v1.7.0</p>
-            <p class="status-bar-field">Status: Online</p>
-        </footer>
     </div>
 
 </body>
