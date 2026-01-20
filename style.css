@@ -83,11 +83,68 @@ li[aria-selected="true"] > .nav-link {
     padding: 20px;
 }
 
+.title-bar-text {
+    text-shadow: none !important;
+}
+
 .title-bar-text img {
     width: 16px;
     height: 16px;
     vertical-align: middle;
     margin-right: 5px;
+}
+
+/* Control Panel Category View Styles */
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+.category-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.category-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.category-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    font-size: 1.3em;
+    color: #2d882d; /* Windows 7 green */
+    text-decoration: none;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.category-title:hover {
+    text-decoration: underline;
+}
+
+.category-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category-link {
+    font-size: 0.95em;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.category-link:hover {
+    text-decoration: underline;
 }
 
 .old-page-link {
